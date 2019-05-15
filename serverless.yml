@@ -1,0 +1,13 @@
+service: nodeless2 # NOTE: update this with your service name
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  hello:
+    handler: handler.hello
+    events: # All events associated with this function
+      - http:
+          path: /create
+          method: post
